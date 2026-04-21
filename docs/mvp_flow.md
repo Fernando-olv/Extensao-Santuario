@@ -1,21 +1,20 @@
-# MVP Flow Definition
+# Scope Update
 
-Scope selected: core MVP flow (iOS + Android).
+The project expanded from MVP-only scope to full page coverage from the provided Figma file.
 
-## Included screens
+## Implemented authentication screens
 
 1. `Logar` (Figma node `15:462`)
 2. `Cadastrar` (Figma node `15:464`)
-3. `Home` (Figma node `1:2`)
 
-## Included states
+## Implemented application sections
 
-- Login: idle form
-- Register: idle form
-- Home: default loaded state with masses, highlights, next event and map block
+- Primary tabs: Home, Notícias, Serviços, Romarias, Transmissões
+- Drawer sections: informational pages, services pages, romarias pages, transmissions pages
+- Detail pages and form pages for each section
 
-## Excluded in this MVP pass
+## Out of scope
 
-- Secondary informational pages (Noticias list/detail, Historia, Equipe, Curiosidades, etc.)
-- Service-specific flows (casamento, batizado, vela virtual, etc.)
-- Backend auth and dynamic content behavior
+- Backend integration (auth, CMS/news, dynamic events)
+- Real media integrations (maps/video players/live stream APIs)
+- Production data and persistence

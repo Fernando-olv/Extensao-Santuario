@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 
+import '../navigation/app_router.dart';
+import '../widgets/app_shell_scaffold.dart';
 import '../widgets/event_card.dart';
 import '../widgets/news_card.dart';
+import '../widgets/page_blocks.dart';
 import '../widgets/santuario_button.dart';
-import '../widgets/santuario_top_header.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          children: [
-            const SantuarioTopHeader(),
-            const SizedBox(height: 16),
+    return AppShellScaffold(
+      currentRoute: AppRoutes.home,
+      title: 'Home',
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+            const SectionTitle(text: 'Próximas Missas'),
+            const SizedBox(height: 10),
             Center(child: Text('Próximas Missas:', style: Theme.of(context).textTheme.titleMedium)),
             const SizedBox(height: 12),
             const Padding(
@@ -35,6 +39,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
+            const SectionTitle(text: 'Principais Notícias'),
+            const SizedBox(height: 10),
             Center(
               child: Text(
                 'Principais Notícias Santuário',
@@ -67,6 +73,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
+            const SectionTitle(text: 'Próximo Evento'),
+            const SizedBox(height: 10),
             Center(child: Text('Próximo Evento', style: Theme.of(context).textTheme.titleMedium)),
             const Divider(indent: 44, endIndent: 44),
             const Padding(
@@ -85,6 +93,8 @@ class HomeScreen extends StatelessWidget {
               child: SantuarioButton(label: 'Calendário', onPressed: () {}),
             ),
             const SizedBox(height: 24),
+            const SectionTitle(text: 'Como Chegar'),
+            const SizedBox(height: 10),
             Center(child: Text('Como Chegar', style: Theme.of(context).textTheme.titleMedium)),
             const Divider(indent: 44, endIndent: 44),
             Container(
@@ -99,7 +109,6 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
           ],
-        ),
       ),
     );
   }
