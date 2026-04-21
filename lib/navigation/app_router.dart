@@ -39,6 +39,35 @@ class AppRoutes {
 }
 
 class AppRouter {
+  static const Set<String> knownRoutes = {
+    AppRoutes.login,
+    AppRoutes.register,
+    AppRoutes.home,
+    AppRoutes.news,
+    AppRoutes.servicesHub,
+    AppRoutes.romariasHub,
+    AppRoutes.transmissionsHub,
+    AppRoutes.newsDetail,
+    AppRoutes.history,
+    AppRoutes.team,
+    AppRoutes.curiosities,
+    AppRoutes.redentoristas,
+    AppRoutes.visitSanctuary,
+    AppRoutes.gallery,
+    AppRoutes.marriages,
+    AppRoutes.baptisms,
+    AppRoutes.virtualCandle,
+    AppRoutes.massIntentions,
+    AppRoutes.eventsCalendar,
+    AppRoutes.secretary,
+    AppRoutes.upcomingRomarias,
+    AppRoutes.registerRomarias,
+    AppRoutes.latestRomarias,
+    AppRoutes.nextTransmission,
+    AppRoutes.lastTransmission,
+    AppRoutes.sundayReflection,
+  };
+
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.login:
