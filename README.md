@@ -1,18 +1,31 @@
-# Extensao-Santuario
+# Extensão Santuário
 
-Este projeto foi desenvolvido de forma voluntaria, sem fins lucrativos, com foco em gerar valor para a comunidade e adquirir experiencia pratica em desenvolvimento de software.
+Este projeto foi desenvolvido de forma **voluntária e sem fins lucrativos**, com o objetivo de **gerar valor para a comunidade** e **consolidar experiência prática em desenvolvimento de software**, aplicando boas práticas de arquitetura, organização de código e UI/UX.
 
-## Extensao Santuario (Flutter)
+---
 
-1:1-oriented Flutter MVP implementation derived from the Figma file:
-`https://www.figma.com/design/KgC1OX4weixbznEcWmlxqa/WireFrame`.
+## Sobre o Projeto
 
-## Implemented authentication flow
+A **Extensão Santuário** é um MVP mobile desenvolvido em **Flutter**, baseado fielmente (**1:1**) no protótipo disponibilizado no Figma:
 
-- Login (`/`)
-- Register (`/register`)
+🔗 https://www.figma.com/design/KgC1OX4weixbznEcWmlxqa/WireFrame
 
-## Primary navigation (BottomNavigationBar)
+O projeto contempla a implementação completa de:
+
+- Navegação
+- Autenticação
+- Estrutura modular da aplicação
+
+---
+
+## Fluxo de Autenticação
+
+- **Login** (`/`)
+- **Cadastro** (`/register`)
+
+---
+
+## Navegação Principal (BottomNavigationBar)
 
 - Home (`/home`)
 - Notícias (`/noticias`)
@@ -20,7 +33,11 @@ Este projeto foi desenvolvido de forma voluntaria, sem fins lucrativos, com foco
 - Romarias (`/romarias`)
 - Transmissões (`/transmissoes`)
 
-## Secondary navigation (Drawer)
+---
+
+## Navegação Secundária (Drawer)
+
+### Conteúdo Institucional
 
 - Notícia (`/noticia`)
 - História (`/historia`)
@@ -28,13 +45,19 @@ Este projeto foi desenvolvido de forma voluntaria, sem fins lucrativos, com foco
 - Curiosidades (`/curiosidades`)
 - Redentoristas (`/redentoristas`)
 - Conheça o Santuário (`/conheca-santuario`)
+
+### Funcionalidades
+
 - Galeria (`/galeria`)
 - Casamentos (`/casamentos`)
 - Batizados (`/batizados`)
 - Vela Virtual (`/vela-virtual`)
 - Intenção de Missa (`/intencao-missa`)
-- Calendário de Eventos (`/calendario-eventos`)
 - Secretaria (`/secretaria`)
+
+### 📅 Eventos e Conteúdo Dinâmico
+
+- Calendário de Eventos (`/calendario-eventos`)
 - Próximas Romarias (`/proximas-romarias`)
 - Cadastrar Romarias (`/cadastrar-romarias`)
 - Últimas Romarias (`/ultimas-romarias`)
@@ -42,24 +65,37 @@ Este projeto foi desenvolvido de forma voluntaria, sem fins lucrativos, com foco
 - Última Transmissão (`/ultima-transmissao`)
 - Reflexão Dominical (`/reflexao-dominical`)
 
-## Run locally
+---
+
+## Execução Local
+
+### Instalar dependências
 
 ```bash
 flutter pub get
+```
+
+### Rodar o projeto
+
+```bash
 flutter run
 ```
 
-## Run tests reliably
+---
 
-Use a non-root user when running Flutter commands.
+## Execução de Testes
+
+Para garantir consistência e evitar problemas de ambiente:
+
+### Verifique o usuário atual
 
 ```bash
 whoami
 ```
 
-If output is `root`, switch to your normal user shell before running tests.
+> Caso esteja como `root`, troque para seu usuário padrão antes de executar os testes.
 
-Recommended deterministic sequence:
+### Sequência recomendada
 
 ```bash
 flutter clean
@@ -67,20 +103,27 @@ flutter pub get
 flutter test
 ```
 
-If you see cache permission errors such as `engine.stamp: Permission denied`, fix SDK ownership once:
+---
 
-```bash
-sudo chown -R $USER:$USER /home/fernando/flutter
-```
+## Arquitetura e Boas Práticas
 
-Then rerun:
+- Uso de **design tokens compartilhados**
+- Componentização com **widgets reutilizáveis**
+- Estrutura **modular por feature**
+- Separação clara entre navegação principal e secundária
 
-```bash
-flutter pub get
-flutter test
-```
+### Decisão de UX
 
-## Notes
+A navegação foi planejada para evitar sobrecarga visual:
 
-- Shared design tokens and reusable widgets are used across all sections.
-- Navigation was redesigned to avoid overcrowding: primary tabs + secondary drawer.
+- **BottomNavigationBar** → acesso rápido às principais funcionalidades  
+- **Drawer (menu lateral)** → funcionalidades complementares e conteúdo institucional  
+
+---
+
+## Objetivo do Projeto
+
+Além de atender a uma necessidade real da comunidade, este projeto também tem como foco:
+
+- Evolução técnica em Flutter
+- Aplicação de boas práticas de engenharia de software
