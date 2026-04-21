@@ -49,6 +49,7 @@ class AppShellScaffold extends StatelessWidget {
       ),
       body: SafeArea(child: body),
       bottomNavigationBar: BottomNavigationBar(
+        key: const Key('primary-bottom-nav'),
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
         selectedItemColor: AppTokens.primaryButton,
@@ -61,7 +62,10 @@ class AppShellScaffold extends StatelessWidget {
         items: primaryPages
             .map(
               (pageItem) => BottomNavigationBarItem(
-                icon: Icon(pageItem.icon),
+                icon: Icon(
+                  pageItem.icon,
+                  key: Key('tab-icon-${pageItem.route}'),
+                ),
                 label: pageItem.label,
               ),
             )
@@ -79,6 +83,7 @@ class AppShellScaffold extends StatelessWidget {
       ),
       ...pages.map(
         (page) => ListTile(
+          key: Key('drawer-item-${page.route}'),
           leading: Icon(page.icon),
           title: Text(page.label),
           onTap: () {

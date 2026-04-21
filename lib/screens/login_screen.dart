@@ -54,6 +54,7 @@ class LoginScreen extends StatelessWidget {
                     const SantuarioInput(label: 'Senha', hint: 'Insira sua senha!', obscure: true),
                     const SizedBox(height: 24),
                     SantuarioButton(
+                      key: const Key('login-enter-button'),
                       label: 'Entrar',
                       expanded: true,
                       onPressed: () => Navigator.pushNamed(context, AppRoutes.home),
