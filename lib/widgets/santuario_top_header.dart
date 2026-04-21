@@ -54,10 +54,10 @@ class SantuarioTopHeader extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 12),
-          Wrap(
+          const Wrap(
             spacing: 8,
             runSpacing: 8,
-            children: const [
+            children: [
               _NavChip(label: 'Santuário'),
               _NavChip(label: 'Serviços'),
               _NavChip(label: 'Romarias'),
