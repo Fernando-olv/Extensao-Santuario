@@ -49,6 +49,37 @@ flutter pub get
 flutter run
 ```
 
+## Run tests reliably
+
+Use a non-root user when running Flutter commands.
+
+```bash
+whoami
+```
+
+If output is `root`, switch to your normal user shell before running tests.
+
+Recommended deterministic sequence:
+
+```bash
+flutter clean
+flutter pub get
+flutter test
+```
+
+If you see cache permission errors such as `engine.stamp: Permission denied`, fix SDK ownership once:
+
+```bash
+sudo chown -R $USER:$USER /home/fernando/flutter
+```
+
+Then rerun:
+
+```bash
+flutter pub get
+flutter test
+```
+
 ## Notes
 
 - Shared design tokens and reusable widgets are used across all sections.
