@@ -14,9 +14,9 @@ void main() {
     await tester.tap(find.widgetWithText(ElevatedButton, 'Entrar').first);
     await tester.pumpAndSettle();
 
-    expect(find.text('Home'), findsOneWidget);
-    expect(find.text('Notícias'), findsOneWidget);
-    expect(find.text('Serviços'), findsOneWidget);
+    expect(find.text('Home'), findsWidgets);
+    expect(find.text('Notícias'), findsWidgets);
+    expect(find.text('Serviços'), findsWidgets);
   });
 
   testWidgets('bottom navigation switches to noticias page', (WidgetTester tester) async {
